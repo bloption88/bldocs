@@ -171,7 +171,32 @@
 
    
 
-6. ##### 错误代码
+6. ##### 前端登录(APP WEBVIEW调用)
+
+   说明：此接口为前端WEBView调用，无需签名，接口域名也与之前不一样。
+
+   Post url：https://www.bloption.com/user/login
+
+   Request：
+
+   | 参数名   | 说明                 | 参与签名 |
+   | :------- | -------------------- | -------- |
+   | username | 注册时返回的username | 0        |
+   | password | 注册时返回的password | 0        |
+
+   Response:
+
+   ​	成功：跳转至产品页面
+
+   ​	失败：`<script>alert('login failed');</script>`    需要用户返回重试
+
+   Curl example：
+
+   ​	`curl -i "https://www.bloption.com/user/login" -d "username=test3&password=123456"`
+
+   
+
+7. ##### 错误代码
 
    | 代码 | 说明                  |
    | ---- | --------------------- |
